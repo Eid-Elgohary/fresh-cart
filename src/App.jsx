@@ -3,7 +3,7 @@ import { Suspense } from "react";
 
 import routes from "./routes/Routes";
 import AppProviders from "./contexts/AppProvider";
-import GlobalStyle from "./styles/styles";
+import GlobalStyle from "./styles/Styles";
 import Spinner from "./ui/Spinner";
 
 const router = createBrowserRouter(routes);
