@@ -22,7 +22,7 @@ function ProductDetails() {
     const wishIds = wishlistData?.data?.data?.map((wish) => wish.id) || [];
 
     setIsWishlist(wishIds.includes(slicedID));
-  }, [slicedID, wishlistData.data.data]);
+  }, [slicedID, wishlistData?.data?.data]);
 
   function getProductDetails() {
     return axios.get(
@@ -31,13 +31,12 @@ function ProductDetails() {
   }
 
   const { data, isLoading } = useQuery({
-    queryKey: ["product", slicedID],
+    queryKey: ["product details", slicedID],
     queryFn: getProductDetails,
   });
 
   if (isLoading) return <Spinner />;
   if (!data) return <Spinner />;
-
 
   return (
     <Section>
