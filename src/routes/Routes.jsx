@@ -1,5 +1,3 @@
-
-
 import { Navigate } from "react-router-dom";
 import { lazy } from "react";
 import AppLayout from "../ui/AppLayout";
@@ -23,6 +21,8 @@ const ProductDetails = lazy(() => import("../pages/ProductDetail"));
 const routes = [
   {
     path: "/",
+    // errorElement: <NotFound />,
+
     element: <AppLayout />,
     children: [
       { path: "/", element: <Navigate to="home" /> },
@@ -80,6 +80,7 @@ const routes = [
     path: "*",
     element: <NotFound />,
   },
+  Error,
 ];
 
 export default routes;

@@ -19,7 +19,9 @@ function CategorySlider({ header, list }) {
             <SlideDiv key={item.id}>
               <InnerDiv>
                 <Img src={item.imageCover} alt={item.title} />
-                <p>{item.title.split(" ").slice(0, 3).join(" ")}</p>
+                <p style={{ textOverflow: "ellipsis", overflow: "hidden" }}>
+                  {item.title.split(" ").slice(0, 3).join(" ")}
+                </p>
               </InnerDiv>
             </SlideDiv>
           ))}
@@ -50,8 +52,8 @@ const InnerDiv = styled.div`
   text-align: center;
   border: 1px solid var(--border);
   padding: 8px;
-  min-height: 14px;
-  font-size: 11px;
+  min-height: 140px;
+  font-size: 10px;
 
   @media (min-width: 576px) {
     min-height: 160px;

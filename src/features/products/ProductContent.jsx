@@ -70,25 +70,30 @@ function ProductContent() {
           <option value="lowestQuantity">Sort by lowest quantity</option>
         </StyledSelect>
       </div>
-      <Div>
+      <Grid>
         {sortedProducts.map((item) => (
           <Card key={item.id} item={item} wishIds={wishIds} />
         ))}
-      </Div>
+      </Grid>
     </div>
   );
 }
 
 export default ProductContent;
 
-const Div = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+const Grid = styled.div`
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 992px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
 `;
-
-
 const StyledSelect = styled.select`
   padding: 4px 8px;
   border-radius: 4px;

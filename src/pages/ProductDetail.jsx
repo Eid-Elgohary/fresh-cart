@@ -19,7 +19,7 @@ function ProductDetails() {
   const [isWishlist, setIsWishlist] = useState(false);
 
   useEffect(() => {
-    const wishIds = wishlistData.data.data.map((wish) => wish.id) || [];
+    const wishIds = wishlistData?.data?.data?.map((wish) => wish.id) || [];
 
     setIsWishlist(wishIds.includes(slicedID));
   }, [slicedID, wishlistData.data.data]);
@@ -29,6 +29,7 @@ function ProductDetails() {
       `https://ecommerce.routemisr.com/api/v1/products/${slicedID}`
     );
   }
+
   const { data, isLoading } = useQuery({
     queryKey: ["product", slicedID],
     queryFn: getProductDetails,
