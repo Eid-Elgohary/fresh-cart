@@ -52,7 +52,7 @@ function ProductContent() {
       sortedProducts = productsData.data.data;
   }
 
-  const wishIds = wishlistData?.data?.data.map((wish) => wish.id) || [];
+  const wishIds = wishlistData?.data?.data?.map((wish) => wish.id) || [];
 
   return (
     <div>

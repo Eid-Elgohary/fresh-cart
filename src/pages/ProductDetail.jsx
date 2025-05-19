@@ -43,7 +43,7 @@ function ProductDetails() {
         <title>product detail</title>
       </Helmet>
       <ProductQuickView
-        item={data.data.data}
+        item={data?.data?.data}
         isWishlist={isWishlist}
         setIsWishlist={setIsWishlist}
       />

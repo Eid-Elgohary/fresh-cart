@@ -21,7 +21,7 @@ const ProductDetails = lazy(() => import("../pages/ProductDetail"));
 const routes = [
   {
     path: "/",
-    // errorElement: <NotFound />,
+    errorElement: <NotFound />,
 
     element: <AppLayout />,
     children: [
