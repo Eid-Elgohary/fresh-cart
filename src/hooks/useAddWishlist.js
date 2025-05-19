@@ -7,7 +7,7 @@ export function useAddItemWishlist(id, tkn) {
     mutationFn: () => addToWishlist(id, tkn),
     mutationKey: ["wishlist"],
 
-    onError: () => toast.error("an error occured "),
+    onError: () => toast.error("error, you may need to login first  "),
   });
 
   return { addItemToWishlist, isLoading };
