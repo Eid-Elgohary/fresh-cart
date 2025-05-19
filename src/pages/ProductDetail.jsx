@@ -36,6 +36,8 @@ function ProductDetails() {
   });
 
   if (isLoading) return <Spinner />;
+  if (!data) return <Spinner />;
+
 
   return (
     <Section>

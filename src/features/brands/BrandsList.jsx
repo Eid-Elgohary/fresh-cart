@@ -16,20 +16,28 @@ function BrandsList() {
           ther is no available data about brands yet .
         </EmptyStateMessage>
       ) : (
-        <Div>
+        <Grid>
           {brandsData.data.data.map((brand) => (
             <BrandItem key={brand._id} brand={brand} />
           ))}
-        </Div>
+        </Grid>
       )}
     </Section>
   );
 }
 
 export default BrandsList;
-const Div = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+const Grid = styled.div`
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 992px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
 `;
+
