@@ -1,13 +1,36 @@
+import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { styled } from "styled-components";
 
 function CategorySlider({ header, list }) {
+  const [slidesToShow, setSlidesToShow] = useState(3);
+
+  function updateSlidesToShow() {
+    const width = window.innerWidth;
+    if (width >= 1200) {
+      setSlidesToShow(6);
+    } else if (width >= 768) {
+      setSlidesToShow(4);
+    } else {
+      setSlidesToShow(3);
+    }
+  }
+
+  useEffect(() => {
+    updateSlidesToShow();
+    window.addEventListener("resize", updateSlidesToShow);
+
+    return () => {
+      window.removeEventListener("resize", updateSlidesToShow);
+    };
+  }, []);
+
   const settings = {
     infinite: true,
-    slidesToShow: 6,
+    slidesToShow: slidesToShow,
     slidesToScroll: 2,
     // autoplay: true,
-    speed: 3000,
+    speed: 1500,
     autoplaySpeed: 0,
   };
   return (
@@ -51,19 +74,20 @@ const Img = styled.img`
 const InnerDiv = styled.div`
   text-align: center;
   border: 1px solid var(--border);
+  border-radius: 4px;
   padding: 8px;
-  min-height: 140px;
+  min-height: 160px;
   font-size: 10px;
 
   @media (min-width: 576px) {
-    min-height: 160px;
+    min-height: 180px;
     font-size: 12px;
   }
   @media (min-width: 768px) {
-    min-height: 190px;
+    min-height: 200px;
   }
   @media (min-width: 992px) {
-    min-height: 230px;
+    min-height: 240px;
     font-size: 14px;
   }
   @media (min-width: 1200px) {

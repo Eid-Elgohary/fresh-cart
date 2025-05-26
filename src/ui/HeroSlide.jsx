@@ -17,7 +17,13 @@ function HeroSlide() {
         Free Shipping to First-Time Customers Only, <br /> After promotions and
         discounts are applied.
       </P>
-      <Button variation="secondary" width='180px'  size="large" as={Link} to="/products">
+      <Button
+        variation="secondary"
+        width="180px"
+        size="large"
+        as={Link}
+        to="/products"
+      >
         shop now
         <span style={{ verticalAlign: "middle", marginLeft: "5px" }}>
           <FaArrowRight />
@@ -53,15 +59,12 @@ const P = styled.p`
   color: var(--text-light);
 `;
 const HeroInfo = styled.div`
-  padding: 5rem 2rem;
-  position: absolute;
-  left: 0%;
-  top: 0;
-  bottom: 0;
+  padding: 3rem 2rem;
   width: 100%;
+  flex: 0 0 auto;
 
   @media (min-width: 768px) {
-    flex: 0 0 auto;
+    padding: 5rem 2rem;
     width: 58.33333333%;
   }
   @media (min-width: 992px) {
@@ -69,7 +72,6 @@ const HeroInfo = styled.div`
   }
 
   @media (min-width: 1400px) {
-    flex: 0 0 auto;
     width: 41.66666667%;
   }
 `;

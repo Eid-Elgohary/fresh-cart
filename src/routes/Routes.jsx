@@ -32,6 +32,7 @@ const routes = [
       { path: "categories", element: <Categories /> },
       { path: "dashboard", element: <Dashboard /> },
       { path: "brands", element: <Brands /> },
+      { path: "products", element: <Products /> },
       { path: "productdetails/:id", element: <ProductDetails /> },
       {
         path: "cart",
@@ -41,7 +42,6 @@ const routes = [
           </ProtectedRoute>
         ),
       },
-      { path: "products", element: <Products /> },
       {
         path: "wishList",
         element: (

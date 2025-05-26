@@ -6,7 +6,7 @@ function EmptyStateMessage({ children }) {
     <div>
       <h1 style={{ marginBottom: "15px" }}>{children}</h1>
       <Button>
-        <StyledLink color="white" to="/home">
+        <StyledLink color="white" to="/products">
           go shopping ➡
         </StyledLink>
       </Button>
